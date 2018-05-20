@@ -22,27 +22,27 @@
         	<!-- the main card which is resume card -->
         	<div class="row">
 
-        		<div class="col-md-4 col-sm-12">
+        		<div class="col-lg-5 col-sm-12">
         		
         		
-                    <div class="card">
-                        <div class="card-body">
+                    <div class="car">
+                        <div class="card-bod">
                             
 
 
                              <form action="{{URL::to('templates')}}" method="post" class="form-horizontal">
 
-        <div class="card-body ">
+        <div class="card-bdy ">
 
             <div class="form-group row ">
-              <div class="col-sm-12 ">
+              <div class="col-xs-12 ">
                 
                 <input type="text" name="name" class="form-control" placeholder="Template Name">
               </div>
             </div>
 
             <div class="form-group row ">
-              <div class="col-sm-12 ">
+              <div class="col-xs-12 ">
                 
                 <input type="text" name="cost" class="form-control" placeholder="Template Cost">
               </div>
@@ -50,7 +50,7 @@
             
 
              <div class="form-group row">
-              <div class="col-sm-12 ">
+              <div class="col-xs-12 ">
                 
                 <select class="form-control" name="layout">
                   @foreach($layouts as $layout)
@@ -69,7 +69,7 @@
 
 
                         </div>
-                        <div class="card-footer">
+                        <div class="card-footr">
                             <button type="submit" class="btn btn-primary">Create</button>
 
                         </form>

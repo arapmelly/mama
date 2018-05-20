@@ -5,8 +5,7 @@
           <li class="breadcrumb-item"><a href="{{URL::to('resumes/show/'.$resume->id)}}">CV-{{$resume->cv_ref}}</a></li>
           
           
-          <li class="breadcrumb-item"><a href="{{URL::to('resumes/view/'.$template->id)}}"> {{$template->name}}</a></li>
-          
+           
           <li class="breadcrumb-item"><a href="{{URL::to('payments/create/'.$template->id)}}">Payment</a></li>
          
          
@@ -28,10 +27,10 @@
         		<div class="col-md-4 col-sm-12">
         		
         		
-                    <div class="card">
+                    <div class="car">
 
                       <div class="card-header">MPESA PAYMENT</div>
-                        <div class="card-body">
+                        <div class="card-bod">
                             
 
 

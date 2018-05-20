@@ -122,6 +122,8 @@ Route::get('resumes/view/{id}', 'ResumesController@view');
 Route::get('resumes/payment/{id}', 'ResumesController@checkpayment');
 Route::get('resumes/download/{id}', 'ResumesController@download');
 Route::get('resumes/down/{id}', 'ResumesController@down');
+Route::get('resumes/templates/{id}', 'ResumesController@templates');
+Route::get('resumes/settemplates/{id}', 'ResumesController@settemplate');
 
 
 
@@ -132,6 +134,7 @@ Route::get('contents/delete/{id}', 'ContentsController@destroy');
 Route::get('contents/show/{id}', 'ContentsController@show');
 Route::get('contents/view/{id}', 'ContentsController@view');
 Route::get('contents/create/{id}', 'ContentsController@create');
+Route::get('contents/nextsection/{id}', 'ContentsController@nextsection');
 
 
 Route::resource('payments', 'PaymentsController');

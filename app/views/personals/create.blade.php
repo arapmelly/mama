@@ -2,6 +2,9 @@
 @section('content')
 		
 		<ol class="breadcrumb">
+
+      <a href="#0" class="btn btn-xs btn-default js-cd-panel-trigger pull-right" data-panel="main">Tips</a>
+
          
           <li class="breadcrumb-item "><a href="{{URL::to('resumes/show/'.$resume->id)}}" > CV-{{$resume->cv_ref}} </a></li>
          
@@ -9,8 +12,7 @@
           <li class="breadcrumb-item "><a href="{{URL::to('contents/view/'.$section->id)}}" >{{$section->name}}</a></li>
 
 
-          <li class="breadcrumb-item "><a href="{{URL::to('contents/create/'.$section->id)}}" >Create</a></li>
-          <!-- <button type="button" class="btn btn-sm btn-primary breadcrumb-menu" data-toggle="modal" data-target="#update">Update</button>
+            <!-- <button type="button" class="btn btn-sm btn-primary breadcrumb-menu" data-toggle="modal" data-target="#update">Update</button>
           
          
            <button type="button" class="btn btn-sm btn-primary breadcrumb-menu" data-toggle="modal" data-target="#create">Create</button>
@@ -34,7 +36,7 @@
 
 
 
-             <div class="col-sm-6 col-md-4 col-xs-12">
+             <div class="col-lg-5 col-md-5 col-xs-12">
                 <div class="card">
                   <form action="{{URL::to('contents')}}" method="post" enctype="multipart/form-data">
                   <div class="card-body">
@@ -76,7 +78,7 @@
                   </div>
 
 
-                  <div class="form-group row ">
+                  <div class="form-group  row">
                     <div class="col-sm-12 ">
                 
                     <input type="text" name="career_label" class="form-control" placeholder="Job Title">
@@ -84,7 +86,7 @@
                   </div>
 
 
-                  <div class="form-group row ">
+                  <div class="form-group  row">
                     <div class="col-sm-12 ">
                     <label>Photo</label>
                     <input type="file" name="file" >
@@ -116,110 +118,22 @@
 
 
 
+         <div class="cd-panel cd-panel--from-right js-cd-panel-main">
+        <header class="cd-panel__header">
+            <h4 style="padding:10px;">Title Goes Here</h4>
+            <a href="#0" class="cd-panel__close js-cd-close">Close</a>
+        </header>
+
+        <div class="cd-panel__container">
+            <div class="col-md-12 cd-panel__content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam magnam accusamus obcaecati nisi eveniet quo veniam quibusdam veritatis autem accusantium doloribus nam mollitia maxime explicabo nemo quae aspernatur impedit cupiditate dicta molestias consectetur, sint reprehenderit maiores. Tempora, exercitationem, voluptate. Sapiente modi officiis nulla sed ullam, amet placeat, illum necessitatibus, eveniet dolorum et maiores earum tempora, quas iste perspiciatis quibusdam vero accusamus veritatis. Recusandae sunt, repellat incidunt impedit tempore iusto, nostrum eaque necessitatibus sint eos omnis! Beatae, itaque, in. Vel reiciendis consequatur saepe soluta itaque aliquam praesentium, neque tempora. Voluptatibus sit, totam rerum quo ex nemo pariatur tempora voluptatem est repudiandae iusto, architecto perferendis sequi, asperiores dolores doloremque odit. Libero, ipsum fuga repellat quae numquam cumque nobis ipsa voluptates pariatur, a rerum aspernatur aliquid maxime magnam vero dolorum omnis neque fugit laboriosam eveniet veniam explicabo, similique reprehenderit at. Iusto totam vitae blanditiis. Culpa, earum modi rerum velit voluptatum voluptatibus debitis, architecto aperiam vero tempora ratione sint ullam voluptas non! Odit sequi ipsa, voluptatem ratione illo ullam quaerat qui, vel dolorum eligendi similique inventore quisquam perferendis reprehenderit quos officia! Maxime aliquam, soluta reiciendis beatae quisquam. Alias porro facilis obcaecati et id, corporis accusamus? Ab porro fuga consequatur quisquam illo quae quas tenetur.</p>
+
+                
+            </div> <!-- cd-panel__content -->
+        </div> <!-- cd-panel__container -->
+    </div> <!-- cd-panel -->
 
  
-          <div class="modal fade" id="update" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h4 class="modal-title">{{$section->name}}</h4>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <form action="{{URL::to('contents/update/')}}" method="post">
-                <div class="modal-body">
-
-                  <input type="hidden" name="section_id" value="{{$section->id}}">
-
-                  <input type="hidden" name="resume_id" value="{{$resume->id}}">
-
-                  <input type="hidden" name="user_id" value="{{$resume->user_id}}">
-                  
-                  <div class="form-group row ">
-                    <div class="col-md-6 col-sm-12 ">
-            
-                    <input type="text" name="fullname" class="form-control" value="" required>
-                    </div>
-                  </div>
-
-                  <div class="form-group row ">
-                    <div class="col-md-6 col-sm-12 ">
-                
-                    <input type="text" name="phone" class="form-control" placeholder="Phone Number*" required>
-                    </div>
-                  </div>
-
-                  <div class="form-group row ">
-                    <div class="col-md-6 col-sm-12 ">
-                
-                    <input type="text" name="email" class="form-control" placeholder="Email Address*" required>
-                    </div>
-                  </div>
-
-                  <div class="form-group row ">
-                    <div class="col-md-6 col-sm-12 ">
-                
-                    <input type="text" name="nationality" class="form-control" placeholder="Nationality*" required>
-                    </div>
-                  </div>
-
-
-                  <div class="form-group row ">
-                    <div class="col-md-6 col-sm-12 ">
-                
-                    <input type="text" name="career_label" class="form-control" placeholder="Job Title">
-                    </div>
-                  </div>
-
-
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Save </button>
-
-                </div>
-
-                </form>
-              </div>
-              <!-- /.modal-content -->
-            </div>
-            <!-- /.modal-dialog -->
-          </div>
-          <!-- /.modal -->
-
-
-
-
-
-          <div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h4 class="modal-title">{{$section->name}}</h4>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <form action="{{URL::to('contents')}}" method="post">
-                <div class="modal-body">
-
-                  
-
-
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Save </button>
-
-                </div>
-
-                </form>
-              </div>
-              <!-- /.modal-content -->
-            </div>
-            <!-- /.modal-dialog -->
-          </div>
-          <!-- /.modal -->
+         
 
 @stop

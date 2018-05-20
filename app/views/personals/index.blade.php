@@ -2,6 +2,10 @@
 @section('content')
 		
 		<ol class="breadcrumb">
+
+      <a href="#0" class="btn btn-xs btn-default js-cd-panel-trigger pull-right" data-panel="main">Pro Tip</a>
+
+      
          
           <li class="breadcrumb-item "><a href="{{URL::to('resumes/show/'.$resume->id)}}" > CV-{{$resume->cv_ref}} </a></li>
          
@@ -21,7 +25,7 @@
 
 
 
-        <div class="container-fluid">
+        <div class="container">
 
 
         	<!-- the main card which is resume card -->
@@ -30,23 +34,16 @@
 
         		@if($personalid == null)
         		
-        		 <div class="col-lg-4 col-sm-12">
+        		 <div class="col-lg-4 col-xs-12">
 
                 
 
                   <a href="{{URL::to('contents/create/'.$section->id)}}"  style="text-decoration:none">
                     <div class="card">
-                    <div class="card-body p-0 d-flex align-items-center ">
                       
-                    <div class="bg-primary p-5 d-flex mr-2 ">
-                        <span class="text-center">
-                          <i class="fa fa-plus font-3xl "></i>
-                        </span>
-
-                    </div>
                     
                     
-                    <div class="">
+                    <div class="card-body">
                         
                         
                        
@@ -54,7 +51,7 @@
                     
                     </div>
 
-                  </div>
+                  
                 </div>
 
                 </a>
@@ -66,8 +63,8 @@
 
 
 @else
-             <div class="col-sm-6 col-md-4 col-xs-12">
-                <div class="card">
+             <div class="col-lg-5 col-md-5 col-xs-12">
+                <div class="card ">
                   <div class="card-header">
                     {{$section->name}}
                     <a href="{{URL::to('contents/edit/'.$personalid)}}" class="btn btn-primary btn-sm pull-right" >update</a>
@@ -108,22 +105,47 @@
  
         	
 
+         
+    
+
         	</div>
         	
-   <div>     	
-<a href="{{URL::to('resumes/show/'.$resume->id)}}" class="btn btn-primary" ><i class="fa fa-home"></i> Back to Sections</a>
-</div>
+  
 
         </div>
 
 
 
+ <div class="cd-panel cd-panel--from-right js-cd-panel-main">
+        <header class="cd-panel__header">
+            <h4 style="padding:10px;">Title Goes Here</h4>
+            <a href="#0" class="cd-panel__close js-cd-close">Close</a>
+        </header>
 
- 
+        <div class="cd-panel__container">
+            <div class="col-md-12 cd-panel__content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam magnam accusamus obcaecati nisi eveniet quo veniam quibusdam veritatis autem accusantium doloribus nam mollitia maxime explicabo nemo quae aspernatur impedit cupiditate dicta molestias consectetur, sint reprehenderit maiores. Tempora, exercitationem, voluptate. Sapiente modi officiis nulla sed ullam, amet placeat, illum necessitatibus, eveniet dolorum et maiores earum tempora, quas iste perspiciatis quibusdam vero accusamus veritatis. Recusandae sunt, repellat incidunt impedit tempore iusto, nostrum eaque necessitatibus sint eos omnis! Beatae, itaque, in. Vel reiciendis consequatur saepe soluta itaque aliquam praesentium, neque tempora. Voluptatibus sit, totam rerum quo ex nemo pariatur tempora voluptatem est repudiandae iusto, architecto perferendis sequi, asperiores dolores doloremque odit. Libero, ipsum fuga repellat quae numquam cumque nobis ipsa voluptates pariatur, a rerum aspernatur aliquid maxime magnam vero dolorum omnis neque fugit laboriosam eveniet veniam explicabo, similique reprehenderit at. Iusto totam vitae blanditiis. Culpa, earum modi rerum velit voluptatum voluptatibus debitis, architecto aperiam vero tempora ratione sint ullam voluptas non! Odit sequi ipsa, voluptatem ratione illo ullam quaerat qui, vel dolorum eligendi similique inventore quisquam perferendis reprehenderit quos officia! Maxime aliquam, soluta reiciendis beatae quisquam. Alias porro facilis obcaecati et id, corporis accusamus? Ab porro fuga consequatur quisquam illo quae quas tenetur.</p>
+
+                
+            </div> <!-- cd-panel__content -->
+        </div> <!-- cd-panel__container -->
+    </div> <!-- cd-panel -->
+
+
+
+
+
+  <footer class="foot navbar-fixed-bottom" style="background-color: #f5f5f5;">
+      <div class="container" style="padding:10px;">
+        <p class="text-mute">
+
+           <a href="{{URL::to('resumes/show/'.$resume->id)}}" class="btn btn-default "><i class="fa fa-chevron-left"></i>&nbsp;Sections</a>
+
           
-
-
-
+          <a href="{{URL::to('contents/nextsection/'.$section->id)}}" class="btn btn-default pull-right">Next Section &nbsp;<i class="fa fa-chevron-right"></i></a>
+        </p>
+      </div>
+    </footer>
 
           
 

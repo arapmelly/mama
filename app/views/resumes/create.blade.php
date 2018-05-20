@@ -1,9 +1,9 @@
-@extends('layouts/client')
+@extends('layouts/site')
 @section('content')
 		
 		<ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{URL::to('resumes')}}"> Resumes</a></li>
-          <li class="breadcrumb-item"><a href="{{URL::to('resumes/create')}}"> New Resume</a></li>
+          <li class="breadcrumb-item"><a href="{{URL::to('resumes/create')}}"> Levels</a></li>
          
          
          
@@ -16,45 +16,36 @@
 
 
 
-        <div class="container-fluid">
+        <div class="container">
 
+          <div class="row">
+
+            <div class="col-lg-12 col-xs-12">
+              <blockquote class="text-muted">Click on one of the academic levels below to get started. This will enable us to provide you with relevant templates and tips</blockquote>
+            </div>
+
+          </div>
 
         	<!-- the main card which is resume card -->
         	<div class="row">
 
         		
-        		    @foreach($levels as $level)
+      @foreach($levels as $level)
 
-<div class="col-md-4 col-sm-12">
+        <div class="col-lg-6 col-xs-12" style="padding:10px;">
 
-<a href="{{URL::to('resumes/init/'.$level->id)}}" style="text-decoration:none">
-<div class="card ">
-                  <div class="card-body p-0 d-flex align-items-center ">
-                      
-                    <div class="bg-primary p-5 d-flex mr-2 ">
-                        <span class="text-center">
-                          <i class="icon icon-chart font-3xl "></i>
-                        </span>
-
-                    </div>
-                    
-                    
-                    <div class="">
-                        
-                        
-                        <div class=" font-weight-bold text-primary text-uppercase">{{$level->name}}</div>
-
-                        <div class=" small">{{$level->description}} </div>
-                    
-                    </div>
-
+            <a href="{{URL::to('resumes/init/'.$level->id)}}" style="text-decoration:none">
+              <div class="card ">
+                  <div class="card-body  align-items-center ">
+                       <div class=" font-weight-bold text-primary text-uppercase">{{$level->name}}</div>
+                       <div class=" small">{{$level->description}} </div>
                   </div>
-                </div>
+              </div>
 
-</a>
+            </a>
 
-</div>
-@endforeach
+        </div>
+      @endforeach
 
 
                    

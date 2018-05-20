@@ -7,8 +7,6 @@
          
          
          
-          <!-- Breadcrumb Menu-->
-          <a href="{{URL::to('templates/edit/'.$template->id)}}" class="breadcrumb-menu btn btn-primary">Edit Template</a>
           
         </ol>
 
@@ -22,34 +20,7 @@
         	<!-- the main card which is resume card -->
         	<div class="row">
 
-
-            <div class="col-md-8 col-sm-12">
-
-
-
-            @if($template->layout == 'stylish')
-              
-              @include('themes/stylish')
-
-            @elseif($template->layout == 'default')
-
-              @include('themes/default')
-
-            @elseif($template->layout == 'mono')
-
-              @include('themes/mono')
-
-            @elseif($template->layout == 'swiss')
-
-              @include('themes/swiss')
-
-            @endif
-
-
-</div>
-
-        		
-        <div class="col-lg-4 col-sm-12">
+            <div class="col-lg-4 col-xs-12">
             
             
                     <div class="card">
@@ -83,7 +54,7 @@
               <td>
 
                 <div class="form-group row ">
-                  <div class=" col-sm-12 ">
+                  <div class=" col-xs-12 ">
                 
                     <input type="text" name="border_top_color" class="form-control" placeholder="color" value="{{$template->border_top_color}}">
                   </div>
@@ -94,7 +65,7 @@
 
                     
                   <div class="form-group row">
-                    <div class=" col-sm-12 ">
+                    <div class=" col-xs-12 ">
                 
                         <select class="form-control" name="border_top_type">
                           <option value="solid">solid</option>
@@ -113,7 +84,7 @@
               <td>
 
                 <div class="form-group row ">
-                  <div class=" col-sm-12 ">
+                  <div class=" col-xs-12 ">
                 
                     <input type="text" name="border_bottom_size" class="form-control" placeholder="size" value="{{$template->border_bottom_size}}">
                   </div>
@@ -124,7 +95,7 @@
               <td>
 
                 <div class="form-group row ">
-                  <div class=" col-sm-12 ">
+                  <div class=" col-xs-12 ">
                 
                     <input type="text" name="border_bottom_color" class="form-control" placeholder="color" value="{{$template->border_bottom_color}}">
                   </div>
@@ -135,7 +106,7 @@
 
                     
                   <div class="form-group row">
-                    <div class=" col-sm-12 ">
+                    <div class=" col-xs-12 ">
                 
                         <select class="form-control" name="border_bottom_type">
                           <option value="solid">solid</option>
@@ -154,7 +125,7 @@
               <td>
 
                 <div class="form-group row ">
-                  <div class=" col-sm-12 ">
+                  <div class=" col-xs-12 ">
                 
                     <input type="text" name="border_left_size" class="form-control" placeholder="size" value="{{$template->border_left_size}}">
                   </div>
@@ -165,7 +136,7 @@
               <td>
 
                 <div class="form-group row ">
-                  <div class=" col-sm-12 ">
+                  <div class=" col-xs-12 ">
                 
                     <input type="text" name="border_left_color" class="form-control" placeholder="color" value="{{$template->border_left_size}}">
                   </div>
@@ -176,7 +147,7 @@
 
                     
                   <div class="form-group row">
-                    <div class=" col-sm-12 ">
+                    <div class=" col-xs-12 ">
                 
                         <select class="form-control" name="border_left_type">
                           <option value="solid">solid</option>
@@ -195,7 +166,7 @@
               <td>
 
                 <div class="form-group row ">
-                  <div class=" col-sm-12 ">
+                  <div class=" col-xs-12 ">
                 
                     <input type="text" name="border_right_size" class="form-control" placeholder="size" value="{{$template->border_right_size}}">
                   </div>
@@ -206,7 +177,7 @@
               <td>
 
                 <div class="form-group row ">
-                  <div class=" col-sm-12 ">
+                  <div class=" col-xs-12 ">
                 
                     <input type="text" name="border_right_color" class="form-control" placeholder="color" value="{{$template->border_right_size}}">
                   </div>
@@ -217,7 +188,7 @@
 
                     
                   <div class="form-group row">
-                    <div class=" col-sm-12 ">
+                    <div class=" col-xs-12 ">
                 
                         <select class="form-control" name="border_right_type">
                           <option value="solid">solid</option>
@@ -239,7 +210,7 @@
               <td>
 
                 <div class="form-group row ">
-                  <div class=" col-sm-12 ">
+                  <div class=" col-xs-12 ">
                 
                     <input type="text" name="text_body_color" class="form-control" placeholder="color" value="{{$template->text_body_color}}">
                   </div>
@@ -250,7 +221,7 @@
               <td>
 
                 <div class="form-group row ">
-                  <div class=" col-sm-12 ">
+                  <div class=" col-xs-12 ">
                 
                     <input type="text" name="text_body_fontsize" class="form-control" placeholder="fontsize" value="{{$template->text_body_fontsize}}">
                   </div>
@@ -264,7 +235,7 @@
                <td>
 
                 <div class="form-group row ">
-                  <div class=" col-sm-12 ">
+                  <div class=" col-xs-12 ">
                 
                     <input type="text" name="text_body_fontweight" class="form-control" placeholder="fontweight" value="{{$template->text_body_fontweight}}">
                   </div>
@@ -275,7 +246,7 @@
                <td>
 
                 <div class="form-group row ">
-                  <div class=" col-sm-12 ">
+                  <div class=" col-xs-12 ">
                 
                     
                     <select class="form-control" name="text_body_fontfamily">
@@ -302,7 +273,7 @@
               <td>
 
                 <div class="form-group row ">
-                  <div class=" col-sm-12 ">
+                  <div class=" col-xs-12 ">
                 
                     <input type="text" name="text_header_color" class="form-control" placeholder="color" value="{{$template->text_header_color}}">
                   </div>
@@ -313,7 +284,7 @@
               <td>
 
                 <div class="form-group row ">
-                  <div class=" col-sm-12 ">
+                  <div class=" col-xs-12 ">
                 
                     <input type="text" name="text_header_fontsize" class="form-control" placeholder="fontsize" value="{{$template->text_header_fontsize}}">
                   </div>
@@ -327,7 +298,7 @@
                <td>
 
                 <div class="form-group row ">
-                  <div class=" col-sm-12 ">
+                  <div class=" col-xs-12 ">
                 
                     <input type="text" name="text_header_fontweight" class="form-control" placeholder="fontweight" value="{{$template->text_header_fontweight}}">
                   </div>
@@ -338,7 +309,7 @@
                <td>
 
                 <div class="form-group row ">
-                  <div class=" col-sm-12 ">
+                  <div class=" col-xs-12 ">
                 
                       
                       <select class="form-control" name="text_header_fontfamily">
@@ -386,14 +357,46 @@
 
 
              </div>
+            
+
+
+
+
+          
+
+          </div>
+
+
+          <div class=""  >
+            <div class="col-lg-8 col-xs-12" >
+
+
+
+            @if($template->layout == 'stylish')
+              
+              @include('themes/stylish')
+
+            @elseif($template->layout == 'default')
+
+              @include('themes/default')
+
+            @elseif($template->layout == 'mono')
+
+              @include('themes/mono')
+
+            @elseif($template->layout == 'swiss')
+
+              @include('themes/swiss')
+
+            @endif
+
+
+          </div>
+
+        </div>
+
         		
-
-
-
-
-        	
-
-        	</div>
+        </div>
         	
         	
 

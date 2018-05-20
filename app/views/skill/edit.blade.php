@@ -34,10 +34,10 @@
 
 
 
-             <div class="col-sm-6 col-md-4 col-xs-12">
-                <div class="card">
+             <div class="col-lg-4 col-xs-12" >
+                <div class="cad">
                   <form action="{{URL::to('contents/update/'.$cont->id)}}" method="post">
-                  <div class="card-body">
+                  <div class="card-bdy">
                       
                      
 
@@ -71,7 +71,7 @@
 
                   </div>
 
-                  <div class="card-footer">
+                  <div class="card-fooer">
                     
                     <button type="submit" class="btn btn-primary " >Update</button>
                   </div>

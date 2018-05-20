@@ -30,23 +30,16 @@
 
         		@if($id == null)
         		
-        		 <div class="col-lg-4 col-sm-12">
+        		 <div class="col-lg-4 col-xs-12">
 
                 
 
                   <a href="{{URL::to('contents/create/'.$section->id)}}"  style="text-decoration:none">
                     <div class="card">
-                    <div class="card-body p-0 d-flex align-items-center ">
-                      
-                    <div class="bg-primary p-5 d-flex mr-2 ">
-                        <span class="text-center">
-                          <i class="fa fa-plus font-3xl "></i>
-                        </span>
-
-                    </div>
                     
                     
-                    <div class="">
+                    
+                    <div class="card-body">
                         
                         
                        
@@ -54,7 +47,7 @@
                     
                     </div>
 
-                  </div>
+                  
                 </div>
 
                 </a>
@@ -66,7 +59,7 @@
 
 
 @else
-             <div class="col-sm-6 col-md-4 col-xs-12">
+             <div class="col-lg-5  col-xs-12">
                 <div class="card">
                   <div class="card-header">
                     {{$section->name}}
@@ -94,16 +87,24 @@
 
         	</div>
         	
-   <div>     	
-<a href="{{URL::to('resumes/show/'.$resume->id)}}" class="btn btn-primary" ><i class="fa fa-home"></i> Back to Sections</a>
-</div>
+  
 
         </div>
 
 
 
 
- 
+    <footer class=" navbar-fixed-bottom" style="background-color: #f5f5f5;">
+      <div class="container" style="padding:10px;">
+        <p class="text-mute">
+
+           <a href="{{URL::to('resumes/show/'.$resume->id)}}" class="btn btn-default "><i class="fa fa-chevron-left"></i>&nbsp;Sections</a>
+
+          
+          <a href="{{URL::to('contents/nextsection/'.$section->id)}}" class="btn btn-default pull-right">Next Section &nbsp;<i class="fa fa-chevron-right"></i></a>
+        </p>
+      </div>
+    </footer>
           
 
 

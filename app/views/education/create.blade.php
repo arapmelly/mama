@@ -35,9 +35,9 @@
 
 
              <div class="col-sm-6 col-md-4 col-xs-12">
-                <div class="card">
+                <div class="car">
                   <form action="{{URL::to('contents')}}" method="post">
-                  <div class="card-body">
+                  <div class="card-bod">
                       
                      
 
@@ -108,7 +108,7 @@
 
                   </div>
 
-                  <div class="card-footer">
+                  <div class="card-foote">
                     
                     <button type="submit" class="btn btn-primary " >Save</button>
                   </div>

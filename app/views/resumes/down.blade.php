@@ -29,17 +29,10 @@
 
 <a href="{{URL::to('resumes/download/'.$template->id)}}" style="text-decoration:none">
 <div class="card ">
-                  <div class="card-body p-0 d-flex align-items-center ">
-                      
-                    <div class="bg-primary p-5 d-flex mr-2 ">
-                        <span class="text-center">
-                          <i class="fa fa-download font-3xl "></i>
-                        </span>
-
-                    </div>
+                  
                     
                     
-                    <div class="">
+                    <div class="card-body">
                         
                         
                         <div class=" font-weight-bold text-primary text-uppercase">CV-{{$resume->cv_ref}}</div>
@@ -49,13 +42,13 @@
                         <div class=" small">Created : {{$resume->created_at}} </div>
                         <hr>
                         <div>
-                          <a href="{{URL::to('resumes/download/'.$template->id)}}" class="btn btn-primary">Download</a>
+                          <a href="{{URL::to('resumes/download/'.$resume->id)}}" class="btn btn-primary">Download</a>
                         </div>
                         
                     
                     </div>
 
-                  </div>
+                
                 </div>
 
 </a>

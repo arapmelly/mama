@@ -21,7 +21,7 @@
 
 
 
-        <div class="container-fluid">
+        <div class="container">
 
 
         	<!-- the main card which is resume card -->
@@ -30,7 +30,7 @@
 
         		@if($personalid == null)
         		
-        		 <div class="col-lg-4 col-sm-12">
+        		 <div class="col-lg-12 col-xs-12">
 
                 
 
@@ -66,7 +66,7 @@
 
 
 @else
-             <div class="col-sm-6 col-md-4 col-xs-12">
+             <div class="col-lg-12 col-xs-12">
                 <div class="card">
                   <div class="card-header">
                     {{$section->name}}
@@ -113,148 +113,6 @@
 
 
  
-          <div class="modal fade" id="update" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h4 class="modal-title">{{$section->name}}</h4>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <form action="{{URL::to('contents/update/')}}" method="post">
-                <div class="modal-body">
-
-                  <input type="hidden" name="section_id" value="{{$section->id}}">
-
-                  <input type="hidden" name="resume_id" value="{{$resume->id}}">
-
-                  <input type="hidden" name="user_id" value="{{$resume->user_id}}">
-                  
-                  <div class="form-group row ">
-                    <div class="col-md-6 col-sm-12 ">
-            
-                    <input type="text" name="fullname" class="form-control" value="" required>
-                    </div>
-                  </div>
-
-                  <div class="form-group row ">
-                    <div class="col-md-6 col-sm-12 ">
-                
-                    <input type="text" name="phone" class="form-control" placeholder="Phone Number*" required>
-                    </div>
-                  </div>
-
-                  <div class="form-group row ">
-                    <div class="col-md-6 col-sm-12 ">
-                
-                    <input type="text" name="email" class="form-control" placeholder="Email Address*" required>
-                    </div>
-                  </div>
-
-                  <div class="form-group row ">
-                    <div class="col-md-6 col-sm-12 ">
-                
-                    <input type="text" name="nationality" class="form-control" placeholder="Nationality*" required>
-                    </div>
-                  </div>
-
-
-                  <div class="form-group row ">
-                    <div class="col-md-6 col-sm-12 ">
-                
-                    <input type="text" name="career_label" class="form-control" placeholder="Job Title">
-                    </div>
-                  </div>
-
-
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Save </button>
-
-                </div>
-
-                </form>
-              </div>
-              <!-- /.modal-content -->
-            </div>
-            <!-- /.modal-dialog -->
-          </div>
-          <!-- /.modal -->
-
-
-
-
-
-          <div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h4 class="modal-title">{{$section->name}}</h4>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <form action="{{URL::to('contents')}}" method="post">
-                <div class="modal-body">
-
-                  <input type="hidden" name="section_id" value="{{$section->id}}">
-
-                  <input type="hidden" name="resume_id" value="{{$resume->id}}">
-
-                  <input type="hidden" name="user_id" value="{{$resume->user_id}}">
-                  
-                  <div class="form-group row ">
-                    <div class="col-md-6 col-sm-12 ">
-            
-                    <input type="text" name="fullname" class="form-control" placeholder="Full Name*" required>
-                    </div>
-                  </div>
-
-                  <div class="form-group row ">
-                    <div class="col-md-6 col-sm-12 ">
-                
-                    <input type="text" name="phone" class="form-control" placeholder="Phone Number*" required>
-                    </div>
-                  </div>
-
-                  <div class="form-group row ">
-                    <div class="col-md-6 col-sm-12 ">
-                
-                    <input type="text" name="email" class="form-control" placeholder="Email Address*" required>
-                    </div>
-                  </div>
-
-                  <div class="form-group row ">
-                    <div class="col-md-6 col-sm-12 ">
-                
-                    <input type="text" name="nationality" class="form-control" placeholder="Nationality*" required>
-                    </div>
-                  </div>
-
-
-                  <div class="form-group row ">
-                    <div class="col-md-6 col-sm-12 ">
-                
-                    <input type="text" name="career_label" class="form-control" placeholder="Job Title">
-                    </div>
-                  </div>
-
-
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Save </button>
-
-                </div>
-
-                </form>
-              </div>
-              <!-- /.modal-content -->
-            </div>
-            <!-- /.modal-dialog -->
-          </div>
-          <!-- /.modal -->
+         
 
 @stop

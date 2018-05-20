@@ -328,9 +328,9 @@ class ContentsController extends \BaseController {
 			$id = DB::table('contents')->where('resume_id', '=', $resume->id)->where('section_id', '=', $section->id)->pluck('id');
 
 			if($id == null){
-				
-
-				return View::make('work.index', compact('section', 'resume', 'id'));
+					
+				$conts = array();
+				return View::make('work.index', compact('section', 'resume', 'id', 'conts'));
 
 			} else {
 
@@ -357,8 +357,8 @@ class ContentsController extends \BaseController {
 
 			if($id == null){
 				
-
-				return View::make('education.index', compact('section', 'resume', 'id'));
+				$conts = array();
+				return View::make('education.index', compact('section', 'resume', 'id', 'conts'));
 
 			} else {
 
@@ -384,8 +384,9 @@ class ContentsController extends \BaseController {
 
 			if($id == null){
 				
+				$conts = array();
 
-				return View::make('skill.index', compact('section', 'resume', 'id'));
+				return View::make('skill.index', compact('section', 'resume', 'id', 'conts'));
 
 			} else {
 
@@ -411,8 +412,8 @@ class ContentsController extends \BaseController {
 
 			if($id == null){
 				
-
-				return View::make('reference.index', compact('section', 'resume', 'id'));
+				$conts = array();
+				return View::make('reference.index', compact('section', 'resume', 'id', 'conts'));
 
 			} else {
 				$conts = DB::table('contents')->where('resume_id', '=', $resume->id)->where('section_id', '=', $section->id)->get();
@@ -431,4 +432,12 @@ class ContentsController extends \BaseController {
 
 	}
 
+
+
+	public function nextsection($id){
+
+		$next = Section::where('id', '>', $id)->orderBy('id','asc')->first();
+
+		return Redirect::to('contents/view/'.$next->id);
+	}
 }

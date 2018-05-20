@@ -196,7 +196,7 @@ return array(
 		'PDF' 			  => 'Barryvdh\Snappy\Facades\SnappyPdf',
 		'Curl'            => 'Ixudra\Curl\Facades\Curl',
 		'Confide'    	  => 'Zizaco\Confide\Facade',
-		
+		'Image' 		  => 'Barryvdh\Snappy\Facades\SnappyImage',
 
 	),
 

@@ -1,21 +1,16 @@
 
+
 @foreach($levels as $level)
 
-<div class="col-md-4 col-sm-12">
+<div class="col-lg-5 col-xs-12" style="padding:10px">
 
 <a href="{{URL::to('levels/edit/'.$level->id)}}" style="text-decoration:none">
 <div class="card ">
-                  <div class="card-body p-0 d-flex align-items-center ">
                       
-                    <div class="bg-primary p-5 d-flex mr-2 ">
-                        <span class="text-center">
-                          <i class="icon icon-chart font-3xl "></i>
-                        </span>
-
-                    </div>
                     
                     
-                    <div class="">
+                    
+                    <div class="card-body">
                         
                         
                         <div class=" font-weight-bold text-primary text-uppercase">{{$level->name}}</div>
@@ -24,7 +19,7 @@
                     
                     </div>
 
-                  </div>
+                  
                 </div>
 
 </a>

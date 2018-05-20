@@ -1,33 +1,24 @@
 @extends('layouts/client')
 @section('content')
-		
-		<ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{URL::to('resumes')}}"> CVs</a></li>
 
-          <li class="breadcrumb-item"><a href="{{URL::to('resumes/show/'.$resume->id)}}" >CV-{{$resume->cv_ref}}</a></li>
-          
-
-         <li class="breadcrumb-item"><a href="{{URL::to('resumes/show/'.$resume->id)}}" > Sections</a></li>
-          
-         
-         
-          <!-- Breadcrumb Menu-->
-          
-          
-        </ol>
-
-		
-<ol class="breadcrumb" style="margin-top:-24px">
+        <div class="navbar navbar-inverse navbar-fixed-top" style="margin-top:50px; background-color:#B2BABB; border-bottom:1px solid #B2BABB; z-index:1">
             
 
-            <ul class="nav nav-pills nav-fill text-center ">
+            <ul class="nav nav-pills nav-fill text-center " >
 
                       <li class="nav-item ">
-                        <a class="nav-link active" href="{{URL::to('resumes/show/'.$resume->id)}}">CV EDITOR</a>
+                        <a class="nav-link active text-muted" href="{{URL::to('resumes/show/'.$resume->id)}}" >CV EDITOR</a>
                       </li>
 
+                      
+
                       <li class="nav-item">
-                        <a class="nav-link" href="{{URL::to('resumes/preview/'.$resume->id)}}">CV PREVIEW</a>
+                        <a class="nav-link text-muted" href="{{URL::to('resumes/view/'.$resume->id)}}">PREVIEW CV</a>
+                      </li>
+
+
+                      <li class="nav-item">
+                        <a class="nav-link text-muted" href="{{URL::to('resumes/templates/'.$resume->id)}}">TEMPLATES</a>
                       </li>
                       
                       
@@ -36,12 +27,18 @@
          
           <!-- Breadcrumb Menu-->
           
-        </ol>
+        </div>
+
+		
+	
+
+		
 
 
 
 
-        <div class="container-fluid">
+
+        <div class="container-fluid" style="margin-top:60px;">
 
 
         	<!-- the main card which is resume card -->
@@ -51,7 +48,7 @@
         		
         		@foreach($sections as $section)
 
-<div class="col-md-4 col-sm-12">
+<div class="col-lg-6 col-xs-12" style="padding:10px;">
 
 <a href="{{URL::to('contents/view/'.$section->id)}}" style="text-decoration:none">
 <div class="card ">
@@ -61,14 +58,12 @@
                       @else
                       <div class="bg-primary p-5 d-flex mr-2 ">
                       @endif
-                        <span class="text-center">
-                          <i class="icon icon-list font-3xl "></i>
-                        </span>
+                        
 
                     </div>
                     
                     
-                    <div class="">
+                    <div class="card-body">
                         
                         
                         <div class=" font-weight-bold text-primary text-uppercase">{{$section->name}}</div>

@@ -57,7 +57,7 @@ class ResumesController extends \BaseController {
 
 		$sections = Section::all();
 
-		Session::put('cv', $resume->id);
+		Session::put('cvid', $resume->id);
 
 		return View::make('resumes.show', compact('resume', 'sections'));
 	}
@@ -130,9 +130,9 @@ class ResumesController extends \BaseController {
 		$cv->cv_ref = $new_ref;
 		$cv->save();
 
-		Session::put('cv', $cv);
+		Session::put('cvid', $cv->id);
 
-		return Redirect::to('resumes/show/'.$cv->id);
+		return Redirect::to('resumes/templates/'.$cv->id);
 	}
 
 
@@ -151,12 +151,11 @@ class ResumesController extends \BaseController {
 
 	public function down($id){
 
-		$template = Template::findOrFail($id);
+		$resume = Resume::findOrFail($id);
 
-		$resumeid = Session::get('resumeid');
+		$template = Template::findOrFail($resume->template_id);
 
-		$resume = Resume::findOrFail($resumeid);
-
+		
 
 		return View::make('resumes.down', compact('resume', 'template'));
 	}
@@ -164,16 +163,15 @@ class ResumesController extends \BaseController {
 
 	public function view($id){
 
-		$template = Template::findOrFail($id);
 
-		$resumeid = Session::get('resumeid');
+		$resume = Resume::findOrFail($id);
 
-		
+		$template = Template::findOrFail($resume->template_id);
+
+		$resumeid = $resume->id;
 
 		$sections = Section::all();
 
-
-		$resume = Resume::findOrFail($resumeid);
 
 		$personal = Content::getPersonalContent($resumeid);
 		
@@ -205,35 +203,64 @@ class ResumesController extends \BaseController {
 		
 		$referees = DB::table('contents')->where('section_id', '=', $referee_section_id)->where('resume_id', '=', $resumeid)->get();
 		
+		//convert CV to image then  return view with image URL
 
-		return View::make('resumes.preview', compact('resume', 'template', 'sections', 'personal', 'summary', 'works', 'work_section_id', 'education_section_id', 'educations', 'skill_section_id', 'skills', 'referees', 'referee_section_id'));
+		$image = Image::loadView('resumes.image', 
+			array(
+				'template'=>$template, 
+				'personal'=>$personal,
+				'summary'=>$summary,
+				'work_section_id'=>$work_section_id,
+				'works'=>$works,
+				'education_section_id'=>$education_section_id,
+				'educations'=>$educations,
+				'skill_section_id'=>$skill_section_id,
+				'skills'=>$skills,
+				'referee_section_id'=>$referee_section_id,
+				'referees'=>$referees,
+				'resume'=>$resume
+			));
+
+		$timestamp = strtotime(date('d-m-y h:m:s'));
+
+		$cvname = $resume->cv_ref.'-'.$timestamp.'.png';
+
+		 $image->save('tmp/'.$cvname);
+
+		
+
+		return View::make('resumes.preview', compact('resume', 'template', 'cvname'));
 	}
 
 	public function checkpayment($id){
 
-		$template = Template::findOrFail($id);
+		$resume = Resume::findOrFail($id);
 
-		$resumeid = Session::get('resumeid');
+		$template = Template::findOrFail($resume->template_id);
 
-		$resume = Resume::findOrFail($resumeid);
+		
+		
 
-		$payment = Payment::checkPayment($resumeid, $template->id);
+		$payment = Payment::checkPayment($resume->id, $template->id);
 
 		if($payment){
-			return Redirect::to('resumes/download/'.$template->id);
+			return Redirect::to('resumes/download/'.$resume->id);
 		} else {
-			return Redirect::to('payments/create/'.$template->id);
+			return Redirect::to('payments/create/'.$resume->id);
 		}
 
 	}
 
 	public function download($id){
 
-		$template = Template::findOrFail($id);
+		
+		$resume = Resume::findOrFail($id);
 
-		$resumeid = Session::get('resumeid');
+		$template = Template::findOrFail($resume->template_id);
 
-		$resume = Resume::findOrFail($resumeid);
+		$resumeid = $resume->id;
+
+		
 
 		$personal = Content::getPersonalContent($resumeid);
 
@@ -285,5 +312,32 @@ class ResumesController extends \BaseController {
 				'resume'=>$resume
 			));
     	return $pdf->download('CV.pdf');
+	}
+
+
+
+	public function templates($id){
+
+		$resume = Resume::findOrFail($id);
+
+		$templates = Template::all();
+
+		return View::make('resumes.temps', compact('resume', 'templates'));
+	}
+
+
+	public function settemplate($id){
+
+		$template = Template::findOrFail($id);
+
+		$resid = Session::get('cvid');
+
+	
+
+		$resume = Resume::findOrFail($resid);
+		$resume->template_id = $template->id;
+		$resume->update();
+
+		return Redirect::to('resumes/view/'.$resume->id);
 	}
 }

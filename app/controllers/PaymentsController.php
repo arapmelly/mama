@@ -21,11 +21,14 @@ class PaymentsController extends \BaseController {
 	 */
 	public function create($id)
 	{
-		$template = Template::find($id);
 
-		$resumeid = Session::get('resumeid');
+		$resume = Resume::findOrFail($id);
 
-		$resume = Resume::findOrFail($resumeid);
+		$template = Template::find($resume->template_id);
+
+		
+
+		
 
 		return View::make('payments.create', compact('template', 'resume'));
 	}
@@ -45,7 +48,7 @@ class PaymentsController extends \BaseController {
 		}
 
 
-		$template_id = array_get($data, 'template_id');
+		$resume_id = array_get($data, 'resume_id');
 
 		$transaction_code = array_get($data, 'transaction_code');
 
@@ -74,7 +77,7 @@ class PaymentsController extends \BaseController {
 			$payment->username = $balance->content->transaction_name;
 			$payment->save();
 
-			return Redirect::to('resumes/down/'.$template_id);
+			return Redirect::to('resumes/down/'.$resume_id);
 		} 
 		//Payment::create($data);
 

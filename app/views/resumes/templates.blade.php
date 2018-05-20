@@ -5,7 +5,7 @@
           
           <li class="breadcrumb-item"><a href="{{URL::to('resumes/show/'.$resume->id)}}"> CV-{{$resume->cv_ref}}</a></li>
           
-          <li class="breadcrumb-item"><a href="{{URL::to('resumes/preview/'.$resume->id)}}"> CV Themes</a></li>
+          <li class="breadcrumb-item"><a href="{{URL::to('resumes/preview/'.$resume->id)}}"> Templates</a></li>
          
          
          
@@ -25,21 +25,14 @@
         		
         		@foreach($templates as $template)
 
-<div class="col-md-4 col-sm-12">
+<div class="col-lg-6 col-xs-12">
 
-<a href="{{URL::to('resumes/view/'.$template->id)}}" style="text-decoration:none">
+<a href="{{URL::to('resumes/settemplates/'.$template->id)}}" style="text-decoration:none">
 <div class="card ">
-                  <div class="card-body p-0 d-flex align-items-center ">
-                      
-                    <div class="bg-primary p-5 d-flex mr-2 ">
-                        <span class="text-center">
-                          <i class="fa fa-file font-3xl "></i>
-                        </span>
-
-                    </div>
+                  
                     
                     
-                    <div class="">
+                    <div class="card-body">
                         
                         
                         <div class=" font-weight-bold text-primary text-uppercase">{{$template->name}}</div>
@@ -52,7 +45,7 @@
                     
                     </div>
 
-                  </div>
+                  
                 </div>
 
 </a>
