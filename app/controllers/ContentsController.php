@@ -26,7 +26,7 @@ class ContentsController extends \BaseController {
 
 		$section = Section::findOrFail($id);
 
-		$resumeid = Session::get('cv');
+		$resumeid = Session::get('cvid');
 
 		$resume = Resume::findOrFail($resumeid);
 
@@ -265,7 +265,7 @@ class ContentsController extends \BaseController {
 
 		$section = Section::findOrFail($id);
 
-		$resumeid = Session::get('cv');
+		$resumeid = Session::get('cvid');
 
 		$resume = Resume::findOrFail($resumeid);
 		

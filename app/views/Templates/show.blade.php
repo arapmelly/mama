@@ -2,6 +2,7 @@
 @section('content')
 		
 		<ol class="breadcrumb">
+      <a href="{{URL::to('templates/thumb/'.$template->id)}}" class="btn btn-default btn-xs pull-right">create thumb</a>
           <li class="breadcrumb-item"><a href="{{URL::to('templates')}}"> templates</a></li>
          <li class="breadcrumb-item"><a href="{{URL::to('templates/show/'.$template->id)}}"> {{$template->name}}</a></li>
          

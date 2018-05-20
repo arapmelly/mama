@@ -132,7 +132,7 @@ class ResumesController extends \BaseController {
 
 		Session::put('cvid', $cv->id);
 
-		return Redirect::to('resumes/templates/'.$cv->id);
+		return Redirect::to('resumestemplates/'.$cv->id);
 	}
 
 
@@ -321,8 +321,13 @@ class ResumesController extends \BaseController {
 		$resume = Resume::findOrFail($id);
 
 		$templates = Template::all();
+		if($resume->template_id == 0){
 
-		return View::make('resumes.temps', compact('resume', 'templates'));
+			return View::make('resumes.temps', compact('resume', 'templates'));
+		} else {
+			return View::make('resumes.templates', compact('resume', 'templates'));
+		}
+		
 	}
 
 
@@ -339,5 +344,21 @@ class ResumesController extends \BaseController {
 		$resume->update();
 
 		return Redirect::to('resumes/view/'.$resume->id);
+	}
+
+
+	public function settemp($id){
+
+		$template = Template::findOrFail($id);
+
+		$resid = Session::get('cvid');
+
+	
+
+		$resume = Resume::findOrFail($resid);
+		$resume->template_id = $template->id;
+		$resume->update();
+
+		return Redirect::to('resumes/show/'.$resume->id);
 	}
 }

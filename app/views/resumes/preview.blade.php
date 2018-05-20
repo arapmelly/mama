@@ -18,7 +18,7 @@
 
 
                       <li class="nav-item">
-                        <a class="nav-link text-muted" href="{{URL::to('resumes/templates/'.$resume->id)}}">TEMPLATES</a>
+                        <a class="nav-link text-muted" href="{{URL::to('resumestemplates/'.$resume->id)}}">TEMPLATES</a>
                       </li>
                       
                       

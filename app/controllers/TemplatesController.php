@@ -173,4 +173,25 @@ class TemplatesController extends \BaseController {
 		return Redirect::route('templates.index');
 	}
 
+
+	public function thumb($id){
+
+		$template =  Template::find($id);
+		//generate the thumbnail
+		//get resume and resume contents from db
+		$timestamp = strtotime(date('d-m-Y h:m:s'));
+		$thumb_name = $template->name.'-'.$timestamp.'.png';
+
+		
+
+		$template->thumb = $thumb_name;
+		$template->update();
+
+		$cc = Resume::thumb($id, $thumb_name);
+
+
+
+		return Redirect::back();
+	}
+
 }

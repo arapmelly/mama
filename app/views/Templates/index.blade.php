@@ -39,7 +39,7 @@
                     <div class="card-body">
                         
                         <div class="card-img" style="background-color:#d5d8dc">
-                    <img src="{{asset('img/temps/'.$template->thumb)}}" width="100%" style="padding:30px;">
+                    <img src="{{'img/temps/'.$template->thumb}}" width="100%" style="padding:30px;">
                   </div>
 
                         <div class=" font-weight-bold text-primary text-uppercase">{{$template->name}}</div>

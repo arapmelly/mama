@@ -110,6 +110,7 @@ Route::get('templates/edit/{id}', 'TemplatesController@edit');
 Route::post('templates/update/{id}', 'TemplatesController@update');
 Route::get('templates/delete/{id}', 'TemplatesController@destroy');
 Route::get('templates/show/{id}', 'TemplatesController@show');
+Route::get('templates/thumb/{id}', 'TemplatesController@thumb');
 
 Route::resource('resumes', 'ResumesController');
 Route::get('resumes/edit/{id}', 'ResumesController@edit');
@@ -122,8 +123,9 @@ Route::get('resumes/view/{id}', 'ResumesController@view');
 Route::get('resumes/payment/{id}', 'ResumesController@checkpayment');
 Route::get('resumes/download/{id}', 'ResumesController@download');
 Route::get('resumes/down/{id}', 'ResumesController@down');
-Route::get('resumes/templates/{id}', 'ResumesController@templates');
+Route::get('resumestemplates/{id}', 'ResumesController@templates');
 Route::get('resumes/settemplates/{id}', 'ResumesController@settemplate');
+Route::get('resumes/settemp/{id}', 'ResumesController@settemp');
 
 
 

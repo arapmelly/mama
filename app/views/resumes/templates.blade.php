@@ -25,7 +25,7 @@
         		
         		@foreach($templates as $template)
 
-<div class="col-lg-6 col-xs-12">
+<div class="col-lg-4 col-xs-12" style="padding:10px">
 
 <a href="{{URL::to('resumes/settemplates/'.$template->id)}}" style="text-decoration:none">
 <div class="card ">
@@ -34,6 +34,10 @@
                     
                     <div class="card-body">
                         
+                        <div class="card-img" style="background-color:#d5d8dc">
+                          
+                    <img src="{{asset('img/temps/'.$template->thumb)}}" width="100%" style="padding:10px;">
+                  </div>
                         
                         <div class=" font-weight-bold text-primary text-uppercase">{{$template->name}}</div>
 
