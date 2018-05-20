@@ -13,7 +13,7 @@
                       
 
                       <li class="nav-item">
-                        <a class="nav-link text-muted" href="{{URL::to('resumes/view/'.$resume->id)}}">PREVIEW CV</a>
+                        <a class="nav-link text-muted" href="{{URL::to('resumes/view/'.$resume->id)}}">PREVIEW</a>
                       </li>
 
 

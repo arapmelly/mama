@@ -57,7 +57,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{URL::to('/')}}">CVMama</a>
+                <a class="navbar-brand" href="{{URL::to('/')}}">cvmama</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -69,7 +69,7 @@
                         <a href="{{URL::to('users/show')}}">My Profile</a>
                     </li> -->
                     <li>
-                        <a href="{{URL::to('users/signout')}}">Sign Out</a>
+                        <a href="{{URL::to('users/logout')}}">Sign Out</a>
                     </li>
                 </ul>
             </div>

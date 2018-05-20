@@ -25,7 +25,7 @@
         		
         		@foreach($templates as $template)
 
-<div class="col-lg-4 col-xs-12" style="padding:10px">
+<div class="col-lg-3 col-xs-12" style="padding:10px">
 
 <a href="{{URL::to('resumes/settemp/'.$template->id)}}" style="text-decoration:none">
 <div class="card ">

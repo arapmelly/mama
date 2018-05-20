@@ -2,6 +2,8 @@
 @section('content')
 		
 		<ol class="breadcrumb">
+      <a href="#0" class="btn btn-xs btn-default js-cd-panel-trigger pull-right" data-panel="main">Pro Tip</a>
+
          
           <li class="breadcrumb-item "><a href="{{URL::to('resumes/show/'.$resume->id)}}" > CV-{{$resume->cv_ref}} </a></li>
          
@@ -119,6 +121,26 @@
         </div>
 
 
+ <div class="cd-panel cd-panel--from-right js-cd-panel-main">
+        <header class="cd-panel__header">
+            <h4 style="padding:10px;">Professional Tips</h4>
+            <a href="#0" class="cd-panel__close js-cd-close">Close</a>
+        </header>
+
+        <div class="cd-panel__container">
+            <div class="col-md-12 cd-panel__content">
+                <p>Listing the experience you’ve had ensuring to include keywords from the job description (e.g. 'project management', 'marketing' etc.) allows potential employers to get a sense of how well-matched you are to the position and how well you know the role.</p>
+                <p>
+                  <h2>Tips</h2>
+                  <ul>
+                    <li>Make sure to use action verbs throughout to describe your work duties.</li>
+                    <li>Focus on achievements and results; don't simply tell a potential employer what you did (i.e., your tasks), tell them how you did it and the results you achieved.</li>
+                    <li>Keep in mind that the skills you learned or honed at a given job are what's important - focus on what skills would transfer to a potential job. For example, if you've worked as a cashier, this means that you've learned transferrable skills like customer service, problem solving, conflict management, etc. Don't shy away from jobs that may not seem immediately related.</li>
+                  </ul>
+                </p> 
+            </div> <!-- cd-panel__content -->
+        </div> <!-- cd-panel__container -->
+    </div> <!-- cd-panel -->
 
 
  
