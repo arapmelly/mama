@@ -83,7 +83,7 @@ class Content extends \Eloquent {
 
 		$date=date_create($cont->start_date);
  		
- 		return date_format($date, "d-M-Y");
+ 		return date_format($date, "M-Y");
 
 		//return  date_format( strtotime($cont->start_date), 'd-M-Y'); 
 	}
@@ -97,7 +97,7 @@ class Content extends \Eloquent {
 
 		$date=date_create($cont->end_date);
  		
- 		return date_format($date, "d-M-Y");
+ 		return date_format($date, "M-Y");
 	}
 
 

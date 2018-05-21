@@ -7,7 +7,6 @@
          
          
           <!-- Breadcrumb Menu-->
-          <a href="{{URL::to('sections/create')}}" class="breadcrumb-menu btn btn-primary">New Section</a>
           
         </ol>
 
@@ -18,6 +17,32 @@
         <div class="container-fluid">
 
 
+          <div class="row">
+
+            <div class="col-lg-5 col-xs-12" style="padding:10px;">
+
+<a href="{{URL::to('sections/create')}}" style="text-decoration:none">
+<div class="card">
+                  
+                    <div class="card-body">
+                        
+                        
+                        <div class=" font-weight-bold text-primary text-uppercase">Create a new section</div>
+
+                       
+                    
+                    </div>
+
+                  
+                </div>
+
+</a>
+
+</div>
+
+          </div>
+
+
         	<!-- the main card which is resume card -->
         	<div class="row">
 
@@ -25,31 +50,22 @@
         		
         		@foreach($sections as $section)
 
-<div class="col-md-4 col-sm-12">
+<div class="col-lg-5 col-xs-12" style="padding:10px;">
 
 <a href="{{URL::to('sections/edit/'.$section->id)}}" style="text-decoration:none">
-<div class="card ">
-                  <div class="card-body p-0 d-flex align-items-center ">
-                      
-                    <div class="bg-primary p-5 d-flex mr-2 ">
-                        <span class="text-center">
-                          <i class="icon icon-list font-3xl "></i>
-                        </span>
-
-                    </div>
-                    
-                    
-                    <div class="">
+<div class="card">
+                  
+                    <div class="card-body">
                         
                         
                         <div class=" font-weight-bold text-primary text-uppercase">{{$section->name}}</div>
 
                         <div class=" small">{{$section->description}} </div>
-                        <div class=" small">{{$section->section_ref}} </div>
+                        
                     
                     </div>
 
-                  </div>
+                  
                 </div>
 
 </a>

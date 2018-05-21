@@ -100,7 +100,7 @@
     <div class="row">
 
 
-        <div class="col-xs-4" style="text-align:right">
+        <div class="col-xs-4" style="text-align:right;">
 
 
             <!-- personal details-->
@@ -173,7 +173,7 @@
 
 
     </div>
-@endif
+    @endif
 
 
      <!-- work details-->

@@ -68,6 +68,10 @@
                     <li>
                         <a href="{{URL::to('levels')}}">Levels</a>
                     </li>
+
+                    <li>
+                        <a href="{{URL::to('sections')}}">Sections</a>
+                    </li>
                     <li>
                         <a href="{{URL::to('templates')}}">Templates</a>
                     </li>

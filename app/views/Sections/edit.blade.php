@@ -22,17 +22,17 @@
         	<!-- the main card which is resume card -->
         	<div class="row">
 
-        		<div class="col-md-4 col-sm-12">
+        		<div class="col-lg-5 col-xs-12">
         		
         		
-                    <div class="card">
-                        <div class="card-body">
+                    <div class="car">
+                        <div class="card-bod">
                             
 
 
                              <form action="{{URL::to('sections/update/'.$section->id)}}" method="post" class="form-horizontal">
 
-        <div class="card-body ">
+        <div class="card-bod ">
 
             <div class="form-group row ">
               <div class="col-sm-12 ">
@@ -75,7 +75,7 @@
 
 
                         </div>
-                        <div class="card-footer">
+                        <div class="card-foote">
                             <button type="submit" class="btn btn-primary">Update</button>
 
                             <a href="{{URL::to('sections/delete/'.$section->id)}}" class="btn btn-danger pull-right">Delete</a>
